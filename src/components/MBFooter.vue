@@ -1,6 +1,6 @@
 <template>
   <section class="mb-footer dark">
-        <h3 class="hl3 mb-footer__hl">© 2020</h3>
+        <h3 class="hl3 mb-footer__hl">© {{ currentYear }}</h3>
         <router-link class="mb-footer__link" to="/impressum">Impressum</router-link>
       </section>
 </template>
@@ -10,6 +10,11 @@ export default {
   name: 'MBFooter',
   props: {
     msg: String,
+  },
+  computed: {
+    currentYear() {
+      return new Date().getFullYear();
+    },
   },
 };
 </script>
